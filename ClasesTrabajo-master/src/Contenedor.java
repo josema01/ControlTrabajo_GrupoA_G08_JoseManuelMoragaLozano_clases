@@ -63,4 +63,15 @@ public class Contenedor {
         else s += "No esta inspeccionado\n";
         return s;
     }
+
+    public String informacion(){
+        String s = new String();
+        s += "ID: " + this.id + "\n";
+        s+= "Peso: " + this.peso + "\n";
+        s+= "Emisor: " + this.emisor + "\n";
+        if (inspeccionado) s += "Esta inspeccionado\n";
+        else s += "No esta inspeccionado\n";
+        s+= "\n";
+        return s;
+    }
 }

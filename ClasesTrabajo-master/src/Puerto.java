@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Puerto {
     private Hub[] hubs;
 
-    public Puerto(){
+    public Puerto() {
         hubs = new Hub[3];
 
         for (int i = 0; i < hubs.length; i++) {
@@ -42,13 +42,11 @@ public class Puerto {
 
     }
 
-    public Contenedor desapilar(int col,int nhub) {
-        nhub = nhub -1; // para "traducirlo"
-        if ((col < 0  || col >= hubs[nhub].m[0].length) && ((nhub>=0 && nhub <3))) {
+    public Contenedor desapilar(int col, int nhub) {
+        nhub = nhub - 1; // para "traducirlo"
+        if ((col < 0 || col >= hubs[nhub].m[0].length) && ((nhub >= 0 && nhub < 3))) {
             return null;
-        }
-
-        else {
+        } else {
             for (int i = 0; i < hubs[nhub].m.length; i++) {
                 if (hubs[nhub].m[i][col] != null) {
                     Contenedor aux = hubs[nhub].m[i][col];
@@ -60,25 +58,24 @@ public class Puerto {
         }
 
 
-
     }
 
 
-    public String mostrar_puerto(){
+    public String mostrar_puerto() {
         String s = new String();
         for (int i = 0; i < hubs.length; i++) {
-            s+= hubs[i].toString();
+            s += hubs[i].toString();
         }
         return s;
     }
 
-    public int contador(String pais){
+    public int contador(String pais) {
         if (pais == null) return -1;
         int c = 0;
         for (int k = 0; k < hubs.length; k++) {
             for (int i = 0; i < hubs[k].m.length; i++) {
                 for (int j = 0; j < hubs[k].m[i].length; j++) {
-                    if (hubs[k].m[i][j] != null && pais.equals(hubs[k].m[i][j].getPais())){
+                    if (hubs[k].m[i][j] != null && pais.equals(hubs[k].m[i][j].getPais())) {
                         c++;
                     }
                 }
@@ -89,22 +86,38 @@ public class Puerto {
         return c;
     }
 
-    public String mostrar_por_id(int id){
+    public String mostrar_por_id(int id) {
         boolean control = false;
         String s = new String();
         for (int k = 0; k < hubs.length; k++) {
             for (int i = 0; i < hubs[k].m.length; i++) {
                 for (int j = 0; j < hubs[k].m[i].length; j++) {
-                    if (hubs[k].m[i][j] != null && hubs[k].m[i][j].getId() == id){
-                        s+=hubs[k].m[i][j].toString();
+                    if (hubs[k].m[i][j] != null && hubs[k].m[i][j].getId() == id) {
+                        s += hubs[k].m[i][j].toString();
                         control = true; //Hemos encontrado el contenedor
                     }
                 }
             }
         }
-        if (!control){
+        if (!control) {
             return "No se ha encontrado el contenedor";
         }
         return s;
     }
+
+    public String buscarPrioridad(int pri) {
+        String s = new String();
+        for (int k = 0; k < hubs.length; k++) {
+            for (int i = 0; i < hubs[k].m.length; i++) {
+                    if (hubs[k].m[0][i] != null && hubs[k].m[0][i].getPrioridad() == pri) {
+                        s += hubs[k].m[0][i].informacion();
+                    }
+            }
+        }
+        return s;
+    }
+
+
+
+
 }
