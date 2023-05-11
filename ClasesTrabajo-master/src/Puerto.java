@@ -109,8 +109,8 @@ public class Puerto {
         String s = new String();
         for (int k = 0; k < hubs.length; k++) {
             for (int i = 0; i < hubs[k].m.length; i++) {
-                    if (hubs[k].m[hubs[k].m.length][i] != null && hubs[k].m[hubs[k].m.length][i].getPrioridad() == pri) {
-                        s += hubs[k].m[hubs[k].m.length][i].informacion();
+                    if (hubs[k].m[hubs[k].m.length-1][i] != null && hubs[k].m[hubs[k].m.length-1][i].getPrioridad() == pri) {
+                        s += hubs[k].m[hubs[k].m.length-1][i].informacion();
                     }
             }
         }
