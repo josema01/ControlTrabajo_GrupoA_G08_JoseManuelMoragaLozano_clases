@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ControlTrabajo_GrupoA_G08_JoseManuelMoragaLozano-clases:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ControlTrabajo_GrupoA_G08_JoseManuelMoragaLozano_clases_jar</output-path>
+    <root id="archive" name="ControlTrabajo_GrupoA_G08_JoseManuelMoragaLozano-clases.jar">
+      <element id="module-output" name="ControlTrabajo_GrupoA_G08_JoseManuelMoragaLozano-clases" />
+    </root>
+  </artifact>
+</component>
