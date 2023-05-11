@@ -2,6 +2,9 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+/*
+Jose Manuel Moraga Lozano
+ */
 public class Puerto {
     private Hub[] hubs;
 
